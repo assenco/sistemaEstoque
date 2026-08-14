@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 //Define capacidade do estoque
 #define MAX 100
@@ -20,7 +21,7 @@ int main(void) {
         do {                                                    //Cria o loop caso receba a entrada invalida
             printf("1-Cadastrar um novo produto\n");
             printf("2-Consultar produtos em estoque\n");
-            printf("3-Alterar produtos em estoque\n");
+            printf("3-Editar produtos em estoque\n");
             entradaValida = scanf("%d", &funcao);
             if (entradaValida!=1 || funcao!=1 && funcao!=2 && funcao!=3) {    //Verifica se a entrada é valida
                 printf("Entrada Invalida!\n");
@@ -97,18 +98,42 @@ int main(void) {
             case 2: {
                 //Consultar produtos em estoque
 
-                for (int i=0; i<MAX; i++){      //Imprime a lista completa
+                for (int i=0; i<novoProduto; i++){      //Imprime a lista completa
 
-                    if (codigo[i]<1) break;     //Imprime somente a parte da lista que contem valores
+                    if (codigo[i]<1) continue;     //Imprime somente a parte da lista que contem valores
 
                     printf("%03d - ", codigo[i]);
                     printf("%s | ", produto[i]);
                     printf("Quantidade: %d | ", quantidade[i]);
                     printf("Preco: R$%.2f\n", preco[i]);
                 }
-
+                break;
             }
 
+            case 3: {
+
+                int opcao;
+                int produtoDeletar;
+
+                printf("1-Apagar item\n");
+                printf("2-Editar item\n");
+                scanf("%d", &opcao);
+
+                printf("Qual o codigo do produto?\n");
+                scanf("%d", &produtoDeletar);
+
+                //Apagar item do estoque
+
+                if (opcao==1) {
+                    strcpy(produto[produtoDeletar-1], "");
+                    codigo[produtoDeletar-1]=0;
+                    quantidade[produtoDeletar-1]=0;
+                    preco[produtoDeletar-1]=0;
+
+                    printf("Produto deletado!\n");
+                }
+                break;
+            }
         }
     }while(1);      //Faz programa rodar infinitamente
 
