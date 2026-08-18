@@ -76,8 +76,10 @@ O programa cria/lê automaticamente o arquivo `estoque.dat` na mesma pasta do ex
 
 ```
 /
-├── main.c          # Código-fonte da versão atual
-├── README.md        # Este arquivo
+├── .gitignore
+├── CMakeLists.txt
+├── main.c
+├── README.md
 ```
 
 *(conforme o projeto evoluir, versões anteriores serão preservadas em tags/releases do GitHub, mantendo o histórico de desenvolvimento acessível)*
