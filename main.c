@@ -12,17 +12,11 @@ typedef struct {
 }produto;
 
 int main(void) {
-
-    /*int quantidade[MAX]={0};
-    char produto[MAX][100]={0};
-    float preco[MAX]={0};
-    int codigo[MAX]={0};*/
+    
     produto estoque [MAX] = {0};
     int funcao;
     int validacao;
-
-
-
+    
     do{
 
         do {    //Cria o loop caso receba a entrada invalida
@@ -276,7 +270,5 @@ int main(void) {
             }
         }
     }while(funcao!=4);
-
 return 0;
-
 }
