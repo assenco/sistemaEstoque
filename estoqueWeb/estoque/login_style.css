@@ -15,23 +15,23 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: auto;
+    height: 500px;
     width: 50%;
     max-width: 1220px;
     min-width: 800px;
     background-color: #6B5E42;
     border-radius: 50px;
-    box-shadow: 0px 5px 20px #201f1b;
+    overflow: hidden;
+    box-shadow: 0px 5px 30px #000000;
 }
 
 /*Div imagem*/
-.img-container{
+.div_imagem{
     width: 40%;
-    padding: 30px;
 }
 
 /*Div login*/
-.login-container{
+.div_login{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,7 +51,7 @@ h1{
 }
 
 /*Div inserir login e senha*/
-.login-form{
+.formulario{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,7 +61,7 @@ h1{
 }
 
 /*Input login e senha*/
-.login-form input{
+.formulario input{
     width: 70%;
     height: 40px;
     border-radius: 20px;
@@ -72,7 +72,7 @@ h1{
 }
 
 /*Div lembre de mim e esqueceu a senha*/
-.login-options{
+.opcoes_login{
     display: flex;
     justify-content: space-between;
     width: 70%;
@@ -80,7 +80,7 @@ h1{
 }
 
 /*Botao lembre de mim*/
-.login-options label {              /*Esta parte foi feita com ajuda de IA*/
+.opcoes_login label {              /*Esta parte foi feita com ajuda de IA*/
     display: flex;
     align-items: center;
     gap: 8px; /* Espaço entre o quadradinho e o texto */
@@ -89,7 +89,7 @@ h1{
 }
 
 /* Estilização do quadradinho do checkbox */
-.login-options input[type="checkbox"] {
+.opcoes_login input[type="checkbox"] {
     /* Esconde o visual padrão do navegador */
     -webkit-appearance: none;
     appearance: none;
@@ -109,12 +109,12 @@ h1{
 }
 
 /* O que acontece quando o checkbox é marcado (Checked) */
-.login-options input[type="checkbox"]:checked {
+.opcoes_login input[type="checkbox"]:checked {
     background-color: #C09537; /* Fundo fica preto */
 }
 
 /* Cria o símbolo de "✓" dentro do quadrado usando pseudo-elemento */
-.login-options input[type="checkbox"]::before {
+.opcoes_login input[type="checkbox"]::before {
     content: "";
     width: 10px;
     height: 6px;
@@ -127,20 +127,19 @@ h1{
     transition: opacity 0.1s ease-in-out;
 }
 
-
-
 /*Botao esqueceu a senha*/
-.login-options button{
+.opcoes_login button{
     border: none;
-}
-
-.login-options button:hover{
-    color: #EAA71B;
     transition: 150ms;
 }
 
-/*Div botao login*/
-.login-footer{
+.opcoes_login button:hover{
+    color: #EAA71B;
+    cursor: pointer;
+}
+
+/*Div botao login e de cadastro*/
+.div_login{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -150,26 +149,28 @@ h1{
 }
 
 /*Botao login*/
-.button-login-footer{
+.botao_login{
     width: 50%;
     height: 50px;
     border: none;
     border-radius: 25px;
     background-color: #EAA71B;
     color: aliceblue;
+    transition: 150ms;
 }
 
-.button-login-footer:hover{
+.botao_login:hover{
     background-color: #e6b95a;
-    transition: 150ms;
+    cursor: pointer;
 }
 
-/*Botao de fazer cadastro*/
-.button-sign-up-footer{
+/*Botao para pagina de cadastro*/
+.botao_cadastro{
     border: none;
+    transition: 150ms;
 }
 
-.button-sign-up-footer:hover{
+.botao_cadastro:hover{
     color: #EAA71B;
-    transition: 150ms;
+    cursor: pointer;
 }

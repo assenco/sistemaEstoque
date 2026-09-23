@@ -1,0 +1,86 @@
+*{
+    font-family: "Ubuntu", sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    min-height: 520px;
+    margin: 0px;
+    padding: 0px 30px;
+    background-color: #33312B;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+    gap: 50px;
+}
+
+h1{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 80px;
+    padding-top: 20vh;
+    margin: 0px;
+}
+
+/*Div dos botoes de estoque e perfil*/
+.div_botoes{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 800px;
+}
+
+/*Botao de e estoque e perfil*/
+.botao{
+    width: 50%;
+    height: 200px;
+    border: none;
+    border-radius: 25px;
+    background-color: #EAA71B;
+    color: aliceblue;
+    box-shadow: 0px 10px 20px #201f1b;
+    font-size: 35px;
+    font-weight: 500;
+    transition: 150ms;
+}
+
+.botao:hover{
+    background-color: #e6b95a;
+    cursor: pointer;
+}
+
+/*Div do botao de sair*/
+footer{
+    text-align: center;
+}
+
+/*Botao sair para paina de login*/
+.botao_sair{
+    width: 150px;
+    height: 80px;
+    border: none;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    background-color: #EAA71B;
+    color: aliceblue;
+    font-size: 18px;
+    font-weight: 500;
+    box-shadow: 0px 10px 20px #201f1b;
+    transition: 150ms;
+}
+
+.botao_sair:hover{
+    background-color: #e6b95a;
+    cursor: pointer;
+}
