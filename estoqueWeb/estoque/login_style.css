@@ -1,0 +1,176 @@
+*{
+    font-family: "Ubuntu", sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    background-color: #33312B;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 500px;
+    width: 50%;
+    max-width: 1220px;
+    min-width: 800px;
+    background-color: #6B5E42;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0px 5px 30px #000000;
+}
+
+/*Div imagem*/
+.div_imagem{
+    width: 40%;
+}
+
+/*Div login*/
+.div_login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 50px;
+}
+
+h1{
+    text-align: center;
+    margin: 30px 0px 60px;
+    width: 100%;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 70px;
+}
+
+/*Div inserir login e senha*/
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+/*Input login e senha*/
+.formulario input{
+    width: 70%;
+    height: 40px;
+    border-radius: 20px;
+    border: solid 1px;
+    border-color: #33312B;
+    background-color: transparent;
+    padding-left: 10px;
+}
+
+/*Div lembre de mim e esqueceu a senha*/
+.opcoes_login{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding-bottom: 50px;
+}
+
+/*Botao lembre de mim*/
+.opcoes_login label {              /*Esta parte foi feita com ajuda de IA*/
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre o quadradinho e o texto */
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Estilização do quadradinho do checkbox */
+.opcoes_login input[type="checkbox"] {
+    /* Esconde o visual padrão do navegador */
+    -webkit-appearance: none;
+    appearance: none;
+    
+    /* Cria o novo visual do zero */
+    width: 18px;
+    height: 18px;
+    border: 2px solid #C09537;
+    border-radius: 9px; /* Deixa os cantos arredondados */
+    background-color: transparent;
+    
+    /* Prepara o alinhamento do ícone de "check" interno */
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* O que acontece quando o checkbox é marcado (Checked) */
+.opcoes_login input[type="checkbox"]:checked {
+    background-color: #C09537; /* Fundo fica preto */
+}
+
+/* Cria o símbolo de "✓" dentro do quadrado usando pseudo-elemento */
+.opcoes_login input[type="checkbox"]::before {
+    content: "";
+    width: 10px;
+    height: 6px;
+    border-left: 2px solid white;  /* Lado esquerdo do check */
+    border-bottom: 2px solid white; /* Base do check */
+    transform: rotate(-45deg) translate(1px, -1px); /* Rotaciona para virar um check */
+    
+    /* Começa invisível e só aparece quando marcado */
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+/*Botao esqueceu a senha*/
+.opcoes_login button{
+    border: none;
+    transition: 150ms;
+}
+
+.opcoes_login button:hover{
+    color: #EAA71B;
+    cursor: pointer;
+}
+
+/*Div botao login e de cadastro*/
+.div_login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+/*Botao login*/
+.botao_login{
+    width: 50%;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    background-color: #EAA71B;
+    color: aliceblue;
+    transition: 150ms;
+}
+
+.botao_login:hover{
+    background-color: #e6b95a;
+    cursor: pointer;
+}
+
+/*Botao para pagina de cadastro*/
+.botao_cadastro{
+    border: none;
+    transition: 150ms;
+}
+
+.botao_cadastro:hover{
+    color: #EAA71B;
+    cursor: pointer;
+}
