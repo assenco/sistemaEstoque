@@ -14,8 +14,11 @@ typedef struct {
 //Prototipo da função cadastrarProduto
 void cadastrarProduto(produto estoque[]);
 
-//Prototipo da função consultarProdutos
-void consultarProdutos(produto estoque[]);
+//Prototipo da função consultarProduto
+void consultarProduto(produto estoque[]);
+
+//Prototipo da função editarProduto
+void editarProduto(produto estoque[]);
 
 int main(void) {
     
@@ -23,8 +26,7 @@ int main(void) {
     int funcao;
     int validacao;
 
-    do{
-
+    do {
         do {    //Cria o loop caso receba a entrada invalida
 
             //Tela inicial
@@ -41,20 +43,18 @@ int main(void) {
                 printf("Entrada Invalida!\n");
                 while (getchar() != '\n');      //Limpa o buffer
             }
-        }while (validacao!=1 || (funcao!=1 && funcao!=2 && funcao!=3 && funcao!=4));
+        }while (validacao!=1 || (funcao<1 || funcao>4));
 
         switch (funcao) {
-
             case 1: cadastrarProduto(estoque); break;  //Cadastrar novo produto
 
-            case 2: consultarProdutos(estoque); break;       //Consultar produtos existentes
+            case 2: consultarProduto(estoque); break;       //Consultar produtos existentes
 
-            case 3: {       //Editar produtos em estoque
-
-
+            case 3: editarProduto(estoque); break;      //Editar produtos em estoque
         }
     }while(funcao!=4);
-return 0;
+
+    return 0;
 }
 
 void cadastrarProduto(produto estoque[]) {
@@ -125,7 +125,7 @@ void cadastrarProduto(produto estoque[]) {
     }
 }
 
-void consultarProdutos(produto estoque[]) {
+void consultarProduto(produto estoque[]) {
     int encontrado=0;
 
     //Faz a verificação se existem produtos em estoque
@@ -138,7 +138,8 @@ void consultarProdutos(produto estoque[]) {
 
     if (!encontrado) {
         printf("Estoque vazio!\n");
-        break;
+
+        return;
     }
 
     printf("---------------------------------------\n");
@@ -154,20 +155,21 @@ void consultarProdutos(produto estoque[]) {
     printf("---------------------------------------\n\n");
 }
 
-void editarProduto() {
+void editarProduto(produto estoque[]) {
     int opcao=0;
     int produtoEditar;
     int encontrado;
+    int validacao;
 
     do {
         do {
-            printf("Qual o codigo do produto?\n");
+            printf("Qual o codigo do produto? (0 para cancelar)\n");
             validacao = scanf("%d", &produtoEditar);
-            if (validacao!=1 || produtoEditar<1) {
+            if (validacao!=1 || produtoEditar<0) {
                 printf("Entrada Invalida!\n");
                 while (getchar() != '\n');
-            }
-        }while (validacao!=1 || produtoEditar<1);
+            }else if (produtoEditar == 0) return;
+        }while (validacao!=1 || produtoEditar<0);
 
         encontrado=0;
 
@@ -213,8 +215,6 @@ void editarProduto() {
         estoque[produtoEditar-1].preco=0;
 
         printf("Produto deletado!\n");
-
-        break;
     }
 
     //Editar item do estoque
@@ -274,11 +274,16 @@ void editarProduto() {
 
             printf("Item modificado!\n\n");
 
-            printf("Deseja modificar mais algum item deste produto? (s/n)\n");
-            scanf(" %c", &novaModificacao);
+            do {
+                printf("Deseja modificar mais algum item deste produto? (s/n)\n");
+                scanf(" %c", &novaModificacao);
+                if (novaModificacao!='s' && novaModificacao!='n') {
+                    printf("Entrada Invalida!\n");
+                    while (getchar() != '\n');
+                }
+            } while (novaModificacao!='s' && novaModificacao!='n');
 
         }while (novaModificacao=='s');
 
-        break;
     }
 }
