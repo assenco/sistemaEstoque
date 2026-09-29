@@ -6,6 +6,39 @@
 #include <stdio.h>
 #include <string.h>
 
+//Falta fazer funcao para validação de entreda de strings, verificar se nao ficou sobrendo variaveis obsoletas principalmente de "validacao", e testar o codigo atual
+int lerInt(char msg[], int min) {
+
+    int valor;
+    int validacao;
+
+    do {
+        printf("%s\n", msg);
+        validacao = scanf("%d", &valor);
+        if (validacao!=1 || valor<min) {
+            printf("Valor Invalido!\n");
+            while (getchar() != '\n');
+        }
+    }while (validacao!=1);
+
+    return valor;
+}
+
+float lerFloat(char msg[], int min) {
+
+    int validacao;
+    int valor;
+
+    do {
+        printf("%s\n", msg);
+        validacao = scanf("%lf", &valor);
+        if (validacao!=1 || valor < min) {
+            printf("Valor Invalido\n");
+            while (getchar() != '\n');
+        }
+    }while (validacao!=1);
+}
+
 void cadastrarProduto(produto estoque[]) {
 
     char opcao='s';
@@ -37,25 +70,11 @@ void cadastrarProduto(produto estoque[]) {
 
         //Inserir quantidade
 
-        do {                                            //Cria um loop ate o usuario digitar uma entrada valida
-            printf("Quantidade a ser armazenada:\n");
-            validacao = scanf("%d", &estoque[posicaoVazia].quantidade);
-            if (validacao!=1 || estoque[posicaoVazia].quantidade<1) {        //Faz a validacao do valor inserido
-                printf("Entrada Invalida!\n");
-                while (getchar() != '\n');                              //Limpa o buffer
-            }
-        }while (validacao!=1 || estoque[posicaoVazia].quantidade<1);
+        estoque[posicaoVazia].quantidade = lerInt("Digite a quantidade:", 1);
 
         //Inserir preco
 
-        do {
-            printf("Preco do produto:\n");              //Mesmos comentarios da entrada de codigo se aplicam
-            validacao = scanf("%f", &estoque[posicaoVazia].preco);
-            if (validacao!=1 || estoque[posicaoVazia].preco<0.05) {
-                printf("Entrada Invalida!\n");
-                while (getchar() != '\n');
-            }
-        }while (validacao!=1 || estoque[posicaoVazia].preco<0.05);
+        estoque[posicaoVazia].preco = lerFloat("Digite o preco do produto:", 0.5);
 
         //Mostra todos os dados do produto
         printf("\tCodigo: %03d\n", estoque[posicaoVazia].codigo);
@@ -75,6 +94,7 @@ void cadastrarProduto(produto estoque[]) {
 }
 
 void consultarProduto(produto estoque[]) {
+
     int encontrado=0;
 
     //Faz a verificação se existem produtos em estoque
@@ -105,20 +125,14 @@ void consultarProduto(produto estoque[]) {
 }
 
 void editarProduto(produto estoque[]) {
+
     int opcao=0;
     int produtoEditar;
     int encontrado;
-    int validacao;
 
     do {
-        do {
-            printf("Qual o codigo do produto? (0 para cancelar)\n");
-            validacao = scanf("%d", &produtoEditar);
-            if (validacao!=1 || produtoEditar<0) {
-                printf("Entrada Invalida!\n");
-                while (getchar() != '\n');
-            }else if (produtoEditar == 0) return;
-        }while (validacao!=1 || produtoEditar<0);
+
+        produtoEditar = lerInt("Digite o codigo do produto:", 1);
 
         encontrado=0;
 
@@ -146,14 +160,8 @@ void editarProduto(produto estoque[]) {
     //Mostra opções de edição ou deletar
 
     do {
-        printf("1-Apagar item\n");
-        printf("2-Editar item\n");
-        validacao = scanf("%d", &opcao);
-        if (validacao!=1 || (opcao!=1 && opcao!=2)) {
-            printf("Entrada Invalida!\n");
-            while (getchar() != '\n');
-        }
-    } while (validacao!=1 || (opcao!=1 && opcao!=2));
+        opcao = lerInt("1-Apagar item\n2-Editar item", 1);
+    }while (opcao!=1 && opcao!=2);
 
     //Apagar item do estoque
 
@@ -180,13 +188,9 @@ void editarProduto(produto estoque[]) {
             printf("2-Quantidade\n");
             printf("3-Preco\n");
 
-            validacao=scanf("%d", &itemModificar);
-
-            if (validacao!=1 || (itemModificar!=1 && itemModificar!=2 && itemModificar!=3)) {
-                printf("Entrada Invalida!\n");
-                while (getchar() != '\n');
-                continue;
-            }
+            do {
+                itemModificar = lerInt("Digite a opcao:", 1);
+            }while (itemModificar!=1 && itemModificar!=2 && itemModificar!=3);
 
             if (itemModificar==1) {
                 do {
@@ -200,25 +204,11 @@ void editarProduto(produto estoque[]) {
             }
 
             if (itemModificar==2) {
-                do {
-                    printf("Quantidade a ser armazenada:\n");
-                    validacao = scanf("%d", &estoque[produtoEditar-1].quantidade);
-                    if (validacao!=1 || estoque[produtoEditar-1].quantidade<1) {
-                        printf("Entrada Invalida!\n");
-                        while (getchar() != '\n');
-                    }
-                }while (validacao!=1 || estoque[produtoEditar-1].quantidade<1);
+                estoque[produtoEditar-1].quantidade = lerInt("Digite a quantidade:", 1);
             }
 
             if (itemModificar==3) {
-                do {
-                    printf("Preco do produto:\n");
-                    validacao = scanf("%f", &estoque[produtoEditar-1].preco);
-                    if (validacao!=1 || estoque[produtoEditar-1].preco<0.05) {
-                        printf("Entrada Invalida!\n");
-                        while (getchar() != '\n');
-                    }
-                }while (validacao!=1 || estoque[produtoEditar-1].preco<0.05);
+                estoque[produtoEditar-1].preco = lerFloat("Digite o preco do produto:", 0.5);
             }
 
             printf("Item modificado!\n\n");
