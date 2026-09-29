@@ -3,4 +3,6 @@ project(sistemaEstoque C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(sistemaEstoque main.c)
+add_executable(sistemaEstoque main.c
+        funcoes.c
+        funcoes.h)
