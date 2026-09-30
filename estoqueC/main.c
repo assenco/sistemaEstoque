@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include  "funcoes.h"
+#include "funcoes.h"
 
 int main(void) {
 
