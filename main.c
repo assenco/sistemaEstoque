@@ -5,7 +5,6 @@ int main(void) {
 
     produto estoque [MAX] = {0};
     int funcao;
-    int validacao;
 
     do {
         do {    //Cria o loop caso receba a entrada invalida
@@ -19,12 +18,9 @@ int main(void) {
 
             //Verifica se a entrada é valida
 
-            validacao = scanf("%d", &funcao);
-            if (validacao!=1 || (funcao!=1 && funcao!=2 && funcao!=3 && funcao!=4)) {
-                printf("Entrada Invalida!\n");
-                while (getchar() != '\n');      //Limpa o buffer
-            }
-        }while (validacao!=1 || (funcao<1 || funcao>4));
+            do {
+                funcao = lerInt("Digite a funcao que deseja executar:", 1);
+            }while (funcao<1 || funcao>4);
 
         switch (funcao) {
             case 1: cadastrarProduto(estoque); break;  //Cadastrar novo produto

@@ -24,7 +24,8 @@ void consultarProduto(produto estoque[]);
 //Prototipo da função editarProduto
 void editarProduto(produto estoque[]);
 
-int validacao(varvalidacao);
+//Prototipo da função lerInt
+int lerInt(char msg[], int min);
 
 
 #endif //SISTEMAESTOQUE_FUNCOES_H

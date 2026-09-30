@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-//Falta fazer funcao para validação de entreda de strings, verificar se nao ficou sobrendo variaveis obsoletas principalmente de "validacao", e testar o codigo atual
+//Falta arrumar funcao para validação de entreda de strings, no claude a conversa "Revisão de bugs no codigo C"
 int lerInt(char msg[], int min) {
 
     int valor;
@@ -19,7 +19,7 @@ int lerInt(char msg[], int min) {
             printf("Valor Invalido!\n");
             while (getchar() != '\n');
         }
-    }while (validacao!=1);
+    }while (validacao!=1 || valor<min);
 
     return valor;
 }
@@ -27,7 +27,7 @@ int lerInt(char msg[], int min) {
 float lerFloat(char msg[], int min) {
 
     int validacao;
-    int valor;
+    float valor;
 
     do {
         printf("%s\n", msg);
@@ -37,13 +37,29 @@ float lerFloat(char msg[], int min) {
             while (getchar() != '\n');
         }
     }while (validacao!=1);
+
+    return valor;
+}
+
+char lerString(char msg[]) {
+
+    int validacao;
+    char texto[50];
+
+    do {
+        printf("%s\n", msg);
+        validacao = scanf(" %99[^\n]", texto);
+        if (validacao!=1) {
+            printf("Entrada Invalida!\n");
+            while (getchar() != '\n');
+        }
+    }while (validacao!=1);
 }
 
 void cadastrarProduto(produto estoque[]) {
 
     char opcao='s';
     int posicaoVazia=0;
-    int validacao;
 
     for (int i=0; opcao!='n' && i<MAX; i++){        //Cria loop enquanto usuario quiser criar novos produtos
 
@@ -55,18 +71,11 @@ void cadastrarProduto(produto estoque[]) {
 
         //Inserir nome do produto
 
-        do {                                                            //Cria um loop ate o usuario digitar uma entrada valida
-            printf("Produto:\n");
-            validacao = scanf(" %99[^\n]", estoque[posicaoVazia].nome); //Insere o novo produto na posicao que esta vazia
-            if (validacao!=1) {                                          //Faz a validacao do valor inserido
-                printf("Entrada Invalida!\n");
-                while (getchar() != '\n');                               //Limpa o buffer
-            }
-        }while (validacao!=1);
+        estoque[posicaoVazia].nome = lerString("Digite o nome do produto:");
 
         //Gera codigo do produto
 
-        estoque[posicaoVazia].codigo=posicaoVazia+1;
+        estoque[posicaoVazia].codigo = posicaoVazia+1;
 
         //Inserir quantidade
 
@@ -83,12 +92,7 @@ void cadastrarProduto(produto estoque[]) {
         printf("\tPreco: R$%.2f\n\n", estoque[posicaoVazia].preco);
 
         do {
-            printf("Deseja adicionar mais algum?  (s/n)\n");
-            scanf(" %c", &opcao);
-            if (opcao!='s' && opcao!='n') {
-                printf("Entrada Invalida!\n");
-                while (getchar() != '\n');
-            }
+            opcao = lerString("Deseja adicionar mais algum?  (s/n)");
         }while (opcao!='s' && opcao!='n');
     }
 }
@@ -193,14 +197,7 @@ void editarProduto(produto estoque[]) {
             }while (itemModificar!=1 && itemModificar!=2 && itemModificar!=3);
 
             if (itemModificar==1) {
-                do {
-                    printf("Produto:\n");
-                    validacao = scanf(" %99[^\n]", estoque[produtoEditar-1].nome);
-                    if (validacao!=1) {
-                        printf("Entrada Invalida!\n");
-                        while (getchar() != '\n');
-                    }
-                }while (validacao!=1);
+                estoque[produtoEditar-1].nome = lerString("Produto:");
             }
 
             if (itemModificar==2) {
@@ -214,13 +211,8 @@ void editarProduto(produto estoque[]) {
             printf("Item modificado!\n\n");
 
             do {
-                printf("Deseja modificar mais algum item deste produto? (s/n)\n");
-                scanf(" %c", &novaModificacao);
-                if (novaModificacao!='s' && novaModificacao!='n') {
-                    printf("Entrada Invalida!\n");
-                    while (getchar() != '\n');
-                }
-            } while (novaModificacao!='s' && novaModificacao!='n');
+                novaModificacao = lerString("Deseja modificar mais algum item deste produto? (s/n)");
+            }while (novaModificacao!='s' && novaModificacao!='n');
 
         }while (novaModificacao=='s');
 
