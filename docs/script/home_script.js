@@ -20,7 +20,7 @@ function entrarPerfil(){
 }
 //Função para ir para a página de login
 function sairHome(){
-    window.location.href = "login.html"
+    window.location.href = "index.html"
 }
 
 estoque.addEventListener('click', entrarEstoque)
