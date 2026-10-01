@@ -1,3 +1,5 @@
+//Cria o grafico de Vendas por Canal
+
 const data = {
     labels: ['Janeiro', 'Fevereiro', 'Março'],
 
@@ -56,13 +58,12 @@ const graficoVendas = document.getElementById('grafico-vendas');
 
 new Chart(graficoVendas, config);
 
-//---------------------------------------------------------//
-
+//Adiciona itens na lista de Alertas de Estoque 
 let botao = document.getElementById('botao-ver-relatorios')
 
-let lista = document.getElementById('alertas-lista')
+let listaAlerta = document.getElementById('alertas-lista')
 
-function adicionarLI(){
+function adicionarItemAlerta(){
 
     let item = document.createElement('li')
     item.classList.add('alertas-estoque-item')
@@ -97,7 +98,59 @@ function adicionarLI(){
     status.textContent = 'Em estoque'
     estoque.appendChild(status)
 
-    lista.appendChild(item)
+    listaAlerta.appendChild(item)
 }
 
-botao.addEventListener('click', adicionarLI)
+//Adiciona itens na lista de Sugestão de Compra
+
+let listaSugestao = document.getElementById('listaSugestao')
+
+//
+
+function adicionarItemSugestao(){
+
+    let linhaItem = document.createElement('tr')
+
+    let nomeItemSugestao = document.createElement('td')
+    nomeItemSugestao.classList.add('sugestoes-produto')
+    nomeItemSugestao.textContent = 'Carregador Portátil 10.000mAh'
+    linhaItem.appendChild(nomeItemSugestao)
+
+    let categoriaItemSugestao = document.createElement('td')
+    categoriaItemSugestao.textContent = 'Acessórios'
+    linhaItem.appendChild(categoriaItemSugestao)
+
+    let qtdAtualItemSugestao = document.createElement('td')
+    qtdAtualItemSugestao.classList.add('qtd')
+    qtdAtualItemSugestao.textContent = '0 un.'
+    linhaItem.appendChild(qtdAtualItemSugestao)
+
+    let qtdMinItemSugestao = document.createElement('td')
+    qtdMinItemSugestao.textContent = '6 un.'
+    linhaItem.appendChild(qtdMinItemSugestao)
+
+    let qtdCompraItemSugestao = document.createElement('td')
+    qtdCompraItemSugestao.classList.add('sugestoes-compra')
+    qtdCompraItemSugestao.textContent = '12 un.'
+    linhaItem.appendChild(qtdCompraItemSugestao)
+
+    let statusItemSugestao = document.createElement('td')
+    statusItemSugestao.textContent = 'Zerado'
+    linhaItem.appendChild(statusItemSugestao)
+
+    let seloItemSugestao = document.createElement('span')
+    seloItemSugestao.classList.add('selo selo-zerado')
+    seloItemSugestao.textContent = 'Zerado'
+    statusItemSugestao.appendChild(seloItemSugestao)
+
+    listaSugestao.appendChild(linhaItem)
+}
+
+function adicionarItens() {
+
+    adicionarItemAlerta()
+    adicionarItemSugestao()
+
+}
+
+botao.addEventListener('click', adicionarItens)
