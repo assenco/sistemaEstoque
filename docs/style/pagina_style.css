@@ -1,0 +1,531 @@
+/* ===== PALETA (mesma do login) =====
+   Fundo escuro:  #33302b
+   Marrom:        #6e5e43
+   Amarelo:       #e9a61a
+   Amarelo claro: #f5c02e
+   Fundo da área principal: #f7f5f0
+*/
+
+/*Configuração Geral*/
+* {
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+body {
+    margin: 0px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas:
+        'aside header'
+        'aside main';
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 70px 1fr;
+    background-color: #f7f5f0;
+    color: #33302b;
+}
+
+/*Tirando formaação padrão de escritas*/
+h1, h2, h3, p, ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*Tirando formaação padrão da lista*/
+ul {
+    list-style: none;
+}
+
+/*Cabeçalho*/
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+    background-color: white;
+    border-bottom: 1px solid #e8e3d8;
+}
+
+header p {
+    font-size: 14px;
+    color: #8a8478;
+}
+
+/*Caminho da página no cabeçalho*/
+.cabecalho-caminho {
+    display: flex;
+    gap: 10px;
+}
+
+/*Caminho da página atual cor mais escura*/
+.cabecalho-caminho .cabecalho-caminho-atual {
+    color: #33302b;
+    font-weight: 500;
+}
+
+/*Data no cabeçalho*/
+.cabecalho-data {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/*Avatar no cabeçalho*/
+.cabecalho-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #fbe9bd;
+    color: #b57a00;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Menu lateral*/
+aside {
+    grid-area: aside;
+    background-color: #33302b;
+    color: white;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Logo menu lateral*/
+.menu-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0px 10px;
+}
+
+/*Icone logo menu lateral*/
+.menu-logo-icone {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: #e9a61a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+/*Nome site*/
+.menu-logo-nome {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/*Descrição site*/
+.menu-logo-sub {
+    font-size: 11px;
+    color: #c9bfa8;
+}
+
+/*Indice de páginas*/
+.menu-titulo {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding: 0px 10px;
+    font-size: 12px;
+    color: #9b927f;
+}
+
+/*Lista de páginas*/
+.menu-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/*Paginas*/
+.menu-item {
+    padding: 12px 15px;
+    border-radius: 25px;
+    color: #e6dfcf;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+
+.menu-item:hover {
+    background-color: #4a463f;
+}
+
+/*Página atual muda estilo*/
+.menu-item-ativo {
+    background-color: #e9a61a;
+    color: white;
+    font-weight: 700;
+}
+
+.menu-item-ativo:hover {
+    background-color: #d3991c;
+}
+
+/*Rodapé que mostra usuário logado*/
+.menu-rodape {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-rodape p{
+    padding-left: 10px;
+}
+
+/*Imagem do usuário*/
+.menu-usuario-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f5c02e;
+    color: #33302b;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Área principal*/
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 25px;
+    padding: 30px;
+    align-content: start;
+}
+
+/* Cabeçalho área principal*/
+.principal-cabecalho {
+    grid-column: span 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/*Bloco com a saudação*/
+.saudacao {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.saudacao-titulo {
+    font-size: 13px;
+    font-weight: 700;
+    color: #e9a61a;
+}
+
+.saudacao-nome {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.saudacao-texto {
+    font-size: 14px;
+    color: #8a8478;
+}
+
+/*Botão para ver relatório no cabeçalho*/
+.botao-ver-relatorios {
+    height: 40px;
+    padding: 0px 22px;
+    border-radius: 25px;
+    border: none;
+    background-color: #e9a61a;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.botao-ver-relatorios:hover {
+    background-color: #f5c02e;
+}
+
+/*Cartões de resumo em baixo do cabeçalho*/
+.cards-resumo {
+    grid-column: span 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+/*Cartão*/
+.card-resumo {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-resumo p {
+    margin: 0px;
+}
+
+/*Div com icone e status*/
+.card-resumo-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-resumo-status p {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 10px;
+    background-color: #f0ede5;
+    color: #8a8478;
+}
+
+/*Icone do status*/
+.card-resumo-icone {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: #fbe9bd;
+    color: #b57a00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+/*Icone fica mais escuro quando entra em alerta*/
+.card-resumo-icone-alerta {
+    background-color: #f5c02e;
+    color: white;
+}
+
+/*Status fica mais escuro quando entra em alerta*/
+.card-resumo-status .card-resumo-status-alerta {
+    background-color: #fbe9bd;
+    color: #b57a00;
+}
+
+/*Titulo do cartão*/
+.card-resumo-titulo {
+    font-size: 14px;
+    color: #8a8478;
+}
+
+/*Valor do cartão*/
+.card-resumo-valor {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+/* ===== ALERTAS DE ESTOQUE ===== */
+.alertas-estoque {
+    grid-column: span 2;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+}
+
+.alertas-estoque-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee9dd;
+}
+
+.alertas-estoque-cabecalho h2,
+.vendas-canal-cabecalho h2,
+.sugestoes-cabecalho h2 {
+    font-size: 18px;
+}
+
+.alertas-estoque-cabecalho p,
+.vendas-canal-cabecalho p,
+.sugestoes-cabecalho p {
+    font-size: 13px;
+    color: #8a8478;
+    margin-top: 4px;
+}
+
+.alertas-estoque-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0px;
+    border-bottom: 1px solid #eee9dd;
+}
+
+.alertas-estoque-item:last-child {
+    border-bottom: none;
+}
+
+.alertas-estoque-icone {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: #fbe9bd;
+    color: #b57a00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alertas-estoque-info {
+    flex: 1;
+}
+
+.alertas-estoque-info h3 {
+    font-size: 14px;
+}
+
+.alertas-estoque-info p,
+.alertas-estoque-qtd p {
+    font-size: 12px;
+    color: #8a8478;
+    margin-top: 3px;
+}
+
+.alertas-estoque-qtd {
+    text-align: right;
+}
+
+.alertas-estoque-qtd .qtd-zerado,
+.alertas-estoque-qtd .qtd-baixo {
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 0px;
+}
+
+/* Cores para as quantidades */
+.qtd-zerado {
+    color: #d93b2b;
+    font-weight: 700;
+}
+
+.qtd-baixo {
+    color: #d98a00;
+    font-weight: 700;
+}
+
+/* ===== SELOS (etiquetas pequenas) ===== */
+.selo {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.selo-alerta {
+    background-color: #fbe9bd;
+    color: #b57a00;
+}
+
+.selo-zerado {
+    background-color: #fde0dc;
+    color: #d93b2b;
+}
+
+/* ===== VENDAS POR CANAL ===== */
+.vendas-canal {
+    grid-column: span 2;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+}
+
+.vendas-canal-cabecalho {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee9dd;
+}
+
+.vendas-canal-corpo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-top: 20px;
+}
+
+.vendas-canal-corpo canvas {
+    max-width: 100%;
+}
+
+.vendas-canal-legenda {
+    display: flex;
+    gap: 25px;
+    font-size: 12px;
+    color: #8a8478;
+}
+
+.legenda-faturamento {
+    border-left: 12px solid #e9a61a;
+    padding-left: 8px;
+}
+
+.legenda-comparativo {
+    border-left: 12px solid #f3dba0;
+    padding-left: 8px;
+}
+
+/* ===== SUGESTÃO DE COMPRA ===== */
+.sugestoes {
+    grid-column: span 4;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+}
+
+.sugestoes-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.sugestoes-link {
+    color: #b57a00;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.sugestoes-link:hover {
+    text-decoration: underline;
+}
+
+.sugestoes-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.sugestoes-tabela th {
+    text-align: left;
+    padding: 12px;
+    font-size: 12px;
+    color: #8a8478;
+    background-color: #f7f5f0;
+}
+
+.sugestoes-tabela td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #eee9dd;
+}
+
+.sugestoes-produto {
+    font-weight: 700;
+}
+
+.sugestoes-compra {
+    font-weight: 700;
+}

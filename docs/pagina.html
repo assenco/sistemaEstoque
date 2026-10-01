@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do gerente</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style/pagina_style.css">
+</head>
+<body>
+    <header>
+        <div class="cabecalho-caminho">
+            <p>Visão geral</p>
+            <p>&#8250;</p>
+            <p class="cabecalho-caminho-atual">Painel do gerente</p>
+        </div>
+        <div class="cabecalho-data">
+            <p>01 de outubro de 2026</p>
+            <div class="cabecalho-avatar">A</div>
+        </div>
+    </header>
+
+    <aside>
+        <div class="menu-logo">
+            <div class="menu-logo-icone">&#9635;</div>
+            <div>
+                <p class="menu-logo-nome">SGE</p>
+                <p class="menu-logo-sub">Gestão de estoque</p>
+            </div>
+        </div>
+        <p class="menu-titulo">Menu principal</p>
+        <nav class="menu-lista">
+            <a href="#" class="menu-item menu-item-ativo">Painel do gerente</a>
+            <a href="#" class="menu-item">Produtos</a>
+            <a href="#" class="menu-item">Relatórios</a>
+        </nav>
+        <div class="menu-rodape">
+            <div class="menu-usuario-avatar">A</div>
+            <p>a</p>
+        </div>
+    </aside>
+
+    <main>
+        <div class="principal-cabecalho">
+            <div class="saudacao">
+                <p class="saudacao-titulo">Visão geral</p>
+                <h1 class="saudacao-nome">Olá, Bruno</h1>
+                <p class="saudacao-texto">Acompanhe o que acontece com o seu estoque hoje.</p>
+            </div>
+            <button class="botao-ver-relatorios">Ver relatórios</button>
+        </div>
+
+        <div class="cards-resumo">
+            <div class="card-resumo">
+                <div class="card-resumo-status">
+                    <span class="card-resumo-icone">&#9635;</span>
+                    <p>Atualizado agora</p>
+                </div>
+                <div>
+                    <p class="card-resumo-titulo">Produtos ativos</p>
+                    <p class="card-resumo-valor">8</p>
+                </div>
+            </div>
+
+            <div class="card-resumo">
+                <div class="card-resumo-status">
+                    <span class="card-resumo-icone card-resumo-icone-alerta">&#9888;</span>
+                    <p class="card-resumo-status-alerta">Atenção necessária</p>
+                </div>
+                <div>
+                    <p class="card-resumo-titulo">Estoque baixo</p>
+                    <p class="card-resumo-valor">4</p>
+                </div>
+            </div>
+
+            <div class="card-resumo">
+                <div class="card-resumo-status">
+                    <span class="card-resumo-icone">&#9776;</span>
+                    <p>Atualizado agora</p>
+                </div>
+                <div>
+                    <p class="card-resumo-titulo">Unidades em estoque</p>
+                    <p class="card-resumo-valor">95</p>
+                </div>
+            </div>
+
+            <div class="card-resumo">
+                <div class="card-resumo-status">
+                    <span class="card-resumo-icone">&#10003;</span>
+                    <p>Atualizado agora</p>
+                </div>
+                <div>
+                    <p class="card-resumo-titulo">Pedidos reservados</p>
+                    <p class="card-resumo-valor">4</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="alertas-estoque">
+            <div class="alertas-estoque-cabecalho">
+                <div>
+                    <h2>Alertas de estoque</h2>
+                    <p>4 produtos precisam da sua atenção</p>
+                </div>
+                <span class="selo selo-alerta">4 alertas</span>
+            </div>
+            <ul>
+                <li class="alertas-estoque-item">
+                    <span class="alertas-estoque-icone">&#9635;</span>
+                    <div class="alertas-estoque-info">
+                        <h3>Carregador Portátil 10.000mAh</h3>
+                        <p>Acessórios · Mínimo: 6 un.</p>
+                    </div>
+                    <div class="alertas-estoque-qtd">
+                        <p class="qtd-zerado">0 un.</p>
+                        <p>Sem estoque</p>
+                    </div>
+                </li>
+                <li class="alertas-estoque-item">
+                    <span class="alertas-estoque-icone">&#9635;</span>
+                    <div class="alertas-estoque-info">
+                        <h3>Suporte Ajustável para Notebook</h3>
+                        <p>Acessórios · Mínimo: 5 un.</p>
+                    </div>
+                    <div class="alertas-estoque-qtd">
+                        <p class="qtd-baixo">1 un.</p>
+                        <p>Em estoque</p>
+                    </div>
+                </li>
+                <li class="alertas-estoque-item">
+                    <span class="alertas-estoque-icone">&#9635;</span>
+                    <div class="alertas-estoque-info">
+                        <h3>Fone de Ouvido Bluetooth</h3>
+                        <p>Eletrônicos · Mínimo: 10 un.</p>
+                    </div>
+                    <div class="alertas-estoque-qtd">
+                        <p class="qtd-baixo">4 un.</p>
+                        <p>Em estoque</p>
+                    </div>
+                </li>
+                <li class="alertas-estoque-item">
+                    <span class="alertas-estoque-icone">&#9635;</span>
+                    <div class="alertas-estoque-info">
+                        <h3>Teclado Mecânico RGB</h3>
+                        <p>Periféricos · Mínimo: 8 un.</p>
+                    </div>
+                    <div class="alertas-estoque-qtd">
+                        <p class="qtd-baixo">7 un.</p>
+                        <p>Em estoque</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="vendas-canal">
+            <div class="vendas-canal-cabecalho">
+                <h2>Vendas por canal</h2>
+                <p>Comparativo de faturamento registrado</p>
+            </div>
+            <div class="vendas-canal-corpo">
+                <canvas id="grafico-vendas" width="440" height="220"></canvas>
+                <div class="vendas-canal-legenda">
+                    <span class="legenda-faturamento">Faturamento</span>
+                    <span class="legenda-comparativo">Comparativo</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="sugestoes">
+            <div class="sugestoes-cabecalho">
+                <div>
+                    <h2>Sugestão de compra</h2>
+                    <p>Quantidade sugerida = (estoque mínimo × 2) − estoque atual</p>
+                </div>
+                <a href="#" class="sugestoes-link">Ver ponto de pedido</a>
+            </div>
+            <table class="sugestoes-tabela">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Categoria</th>
+                        <th>Estoque atual</th>
+                        <th>Estoque mínimo</th>
+                        <th>Sugestão de compra</th>
+                        <th>Situação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="sugestoes-produto">Carregador Portátil 10.000mAh</td>
+                        <td>Acessórios</td>
+                        <td class="qtd-zerado">0 un.</td>
+                        <td>6 un.</td>
+                        <td class="sugestoes-compra">12 un.</td>
+                        <td><span class="selo selo-zerado">Zerado</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sugestoes-produto">Suporte Ajustável para Notebook</td>
+                        <td>Acessórios</td>
+                        <td class="qtd-baixo">1 un.</td>
+                        <td>5 un.</td>
+                        <td class="sugestoes-compra">9 un.</td>
+                        <td><span class="selo selo-alerta">Baixo</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        // Gráfico simples de barras (troque por Chart.js quando tiver os dados reais)
+        const canvas = document.getElementById('grafico-vendas');
+        const ctx = canvas.getContext('2d');
+        const grupos = [
+            { nome: 'Loja física', a: 339.6, b: 200 },
+            { nome: 'E-commerce', a: 937.8, b: 560 }
+        ];
+        const max = 937.8, base = 180, largura = 44;
+        ctx.font = '500 13px Ubuntu, sans-serif';
+        ctx.textAlign = 'center';
+        grupos.forEach((g, i) => {
+            const x = 90 + i * 190;
+            ctx.fillStyle = '#e9a61a';
+            ctx.beginPath();
+            ctx.roundRect(x, base - (g.a / max) * 150, largura, (g.a / max) * 150, 6);
+            ctx.fill();
+            ctx.fillStyle = '#f3dba0';
+            ctx.beginPath();
+            ctx.roundRect(x + largura + 6, base - (g.b / max) * 150, largura, (g.b / max) * 150, 6);
+            ctx.fill();
+            ctx.fillStyle = '#33302b';
+            ctx.fillText(g.nome, x + largura + 3, base + 26);
+        });
+    </script>
+</body>
+</html>
