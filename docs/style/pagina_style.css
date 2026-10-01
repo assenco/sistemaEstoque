@@ -324,7 +324,7 @@ main {
     font-weight: 700;
 }
 
-/* ===== ALERTAS DE ESTOQUE ===== */
+/*Alertas de estoque*/
 .alertas-estoque {
     grid-column: span 2;
     background-color: white;
@@ -333,6 +333,7 @@ main {
     padding: 25px;
 }
 
+/*Cabeçalho*/
 .alertas-estoque-cabecalho {
     display: flex;
     justify-content: space-between;
@@ -341,12 +342,14 @@ main {
     border-bottom: 1px solid #eee9dd;
 }
 
+/*Define todos os h2 de alertas, venda e sugestão*/
 .alertas-estoque-cabecalho h2,
 .vendas-canal-cabecalho h2,
 .sugestoes-cabecalho h2 {
     font-size: 18px;
 }
 
+/*Define todos os p de alertas, venda e sugestão*/
 .alertas-estoque-cabecalho p,
 .vendas-canal-cabecalho p,
 .sugestoes-cabecalho p {
@@ -355,6 +358,24 @@ main {
     margin-top: 4px;
 }
 
+/*Lista de itens em alerta*/
+.alertas-lista{                     /*Criado para criar uma barra de rolagem cajo haja muitos itens*/
+    height: 300px;
+    overflow-y: auto;
+}
+
+/*Bloco criado por ia para mudar estilo da barra de rolagem*/
+#alertas-lista::-webkit-scrollbar {
+    width: 6px;
+}
+
+/*Bloco criado por ia para mudar estilo da barra de rolagem*/
+#alertas-lista::-webkit-scrollbar-thumb {
+    background-color: #d0d0d0;
+    border-radius: 10px;
+}
+
+/*Linha do item da lista de alerta*/
 .alertas-estoque-item {
     display: flex;
     align-items: center;
@@ -367,6 +388,7 @@ main {
     border-bottom: none;
 }
 
+/*Icone do item*/
 .alertas-estoque-icone {
     width: 40px;
     height: 40px;
@@ -378,6 +400,7 @@ main {
     align-items: center;
 }
 
+/*Nome e informação do item*/
 .alertas-estoque-info {
     flex: 1;
 }
@@ -386,6 +409,12 @@ main {
     font-size: 14px;
 }
 
+/*Quantidade do item em estoque*/
+.alertas-estoque-qtd {
+    text-align: right;
+}
+
+/*Define os p das informações e status de quantidade do item*/
 .alertas-estoque-info p,
 .alertas-estoque-qtd p {
     font-size: 12px;
@@ -393,90 +422,40 @@ main {
     margin-top: 3px;
 }
 
-.alertas-estoque-qtd {
-    text-align: right;
-}
-
-.alertas-estoque-qtd .qtd-zerado,
-.alertas-estoque-qtd .qtd-baixo {
+/*Número da quantidade de itens*/
+.alertas-estoque-qtd .qtd{
     font-size: 15px;
     font-weight: 700;
     margin-top: 0px;
 }
 
-/* Cores para as quantidades */
-.qtd-zerado {
-    color: #d93b2b;
-    font-weight: 700;
-}
-
-.qtd-baixo {
-    color: #d98a00;
-    font-weight: 700;
-}
-
-/* ===== SELOS (etiquetas pequenas) ===== */
-.selo {
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.selo-alerta {
-    background-color: #fbe9bd;
-    color: #b57a00;
-}
-
-.selo-zerado {
-    background-color: #fde0dc;
-    color: #d93b2b;
-}
-
-/* ===== VENDAS POR CANAL ===== */
+/*Vendas canal*/
 .vendas-canal {
     grid-column: span 2;
     background-color: white;
     border-radius: 25px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
     padding: 25px;
+    display: flex;
+    flex-direction: column;
 }
 
+/*Cabeçalho*/
 .vendas-canal-cabecalho {
-    padding-bottom: 20px;
     border-bottom: 1px solid #eee9dd;
 }
 
+/*Local onde entra o gráfico*/
 .vendas-canal-corpo {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
     padding-top: 20px;
+    flex: 1;
 }
 
-.vendas-canal-corpo canvas {
-    max-width: 100%;
-}
-
-.vendas-canal-legenda {
-    display: flex;
-    gap: 25px;
-    font-size: 12px;
-    color: #8a8478;
-}
-
-.legenda-faturamento {
-    border-left: 12px solid #e9a61a;
-    padding-left: 8px;
-}
-
-.legenda-comparativo {
-    border-left: 12px solid #f3dba0;
-    padding-left: 8px;
-}
-
-/* ===== SUGESTÃO DE COMPRA ===== */
+/*Sugestão de compra*/
 .sugestoes {
     grid-column: span 4;
     background-color: white;
@@ -485,6 +464,7 @@ main {
     padding: 25px;
 }
 
+/*Cabeçalho*/
 .sugestoes-cabecalho {
     display: flex;
     justify-content: space-between;
@@ -492,6 +472,7 @@ main {
     margin-bottom: 20px;
 }
 
+/*Link para ver ponto de pedido*/
 .sugestoes-link {
     color: #b57a00;
     font-weight: 700;
@@ -503,6 +484,7 @@ main {
     text-decoration: underline;
 }
 
+/*Tabela de sugestão*/
 .sugestoes-tabela {
     width: 100%;
     border-collapse: collapse;
@@ -522,10 +504,32 @@ main {
     border-bottom: 1px solid #eee9dd;
 }
 
+/*Nome do produto*/
 .sugestoes-produto {
     font-weight: 700;
 }
 
+/*Quantidade para compra*/
 .sugestoes-compra {
     font-weight: 700;
+}
+
+/*Selo de alerta do estado do item*/
+.selo {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/*Selo de quando o estoque esta baixo*/
+.selo-alerta {
+    background-color: #fbe9bd;
+    color: #b57a00;
+}
+
+/*Selo de quando o estoque está zerado*/
+.selo-zerado {
+    background-color: #fde0dc;
+    color: #d93b2b;
 }

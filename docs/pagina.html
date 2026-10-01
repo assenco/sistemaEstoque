@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link rel="stylesheet" href="style/pagina_style.css">
 </head>
 <body>
@@ -51,7 +53,7 @@
                 <h1 class="saudacao-nome">Olá, Bruno</h1>
                 <p class="saudacao-texto">Acompanhe o que acontece com o seu estoque hoje.</p>
             </div>
-            <button class="botao-ver-relatorios">Ver relatórios</button>
+            <button id="botao-ver-relatorios" class="botao-ver-relatorios">Ver relatórios</button>
         </div>
 
         <div class="cards-resumo">
@@ -108,7 +110,7 @@
                 </div>
                 <span class="selo selo-alerta">4 alertas</span>
             </div>
-            <ul>
+            <ul id="alertas-lista" class="alertas-lista">
                 <li class="alertas-estoque-item">
                     <span class="alertas-estoque-icone">&#9635;</span>
                     <div class="alertas-estoque-info">
@@ -116,7 +118,7 @@
                         <p>Acessórios · Mínimo: 6 un.</p>
                     </div>
                     <div class="alertas-estoque-qtd">
-                        <p class="qtd-zerado">0 un.</p>
+                        <p class="qtd">0 un.</p>
                         <p>Sem estoque</p>
                     </div>
                 </li>
@@ -127,7 +129,7 @@
                         <p>Acessórios · Mínimo: 5 un.</p>
                     </div>
                     <div class="alertas-estoque-qtd">
-                        <p class="qtd-baixo">1 un.</p>
+                        <p class="qtd">1 un.</p>
                         <p>Em estoque</p>
                     </div>
                 </li>
@@ -138,18 +140,7 @@
                         <p>Eletrônicos · Mínimo: 10 un.</p>
                     </div>
                     <div class="alertas-estoque-qtd">
-                        <p class="qtd-baixo">4 un.</p>
-                        <p>Em estoque</p>
-                    </div>
-                </li>
-                <li class="alertas-estoque-item">
-                    <span class="alertas-estoque-icone">&#9635;</span>
-                    <div class="alertas-estoque-info">
-                        <h3>Teclado Mecânico RGB</h3>
-                        <p>Periféricos · Mínimo: 8 un.</p>
-                    </div>
-                    <div class="alertas-estoque-qtd">
-                        <p class="qtd-baixo">7 un.</p>
+                        <p class="qtd">4 un.</p>
                         <p>Em estoque</p>
                     </div>
                 </li>
@@ -162,11 +153,7 @@
                 <p>Comparativo de faturamento registrado</p>
             </div>
             <div class="vendas-canal-corpo">
-                <canvas id="grafico-vendas" width="440" height="220"></canvas>
-                <div class="vendas-canal-legenda">
-                    <span class="legenda-faturamento">Faturamento</span>
-                    <span class="legenda-comparativo">Comparativo</span>
-                </div>
+                <canvas id="grafico-vendas"></canvas>
             </div>
         </div>
 
@@ -193,7 +180,7 @@
                     <tr>
                         <td class="sugestoes-produto">Carregador Portátil 10.000mAh</td>
                         <td>Acessórios</td>
-                        <td class="qtd-zerado">0 un.</td>
+                        <td class="qtd">0 un.</td>
                         <td>6 un.</td>
                         <td class="sugestoes-compra">12 un.</td>
                         <td><span class="selo selo-zerado">Zerado</span></td>
@@ -201,7 +188,7 @@
                     <tr>
                         <td class="sugestoes-produto">Suporte Ajustável para Notebook</td>
                         <td>Acessórios</td>
-                        <td class="qtd-baixo">1 un.</td>
+                        <td class="qtd">1 un.</td>
                         <td>5 un.</td>
                         <td class="sugestoes-compra">9 un.</td>
                         <td><span class="selo selo-alerta">Baixo</span></td>
@@ -211,30 +198,6 @@
         </div>
     </main>
 
-    <script>
-        // Gráfico simples de barras (troque por Chart.js quando tiver os dados reais)
-        const canvas = document.getElementById('grafico-vendas');
-        const ctx = canvas.getContext('2d');
-        const grupos = [
-            { nome: 'Loja física', a: 339.6, b: 200 },
-            { nome: 'E-commerce', a: 937.8, b: 560 }
-        ];
-        const max = 937.8, base = 180, largura = 44;
-        ctx.font = '500 13px Ubuntu, sans-serif';
-        ctx.textAlign = 'center';
-        grupos.forEach((g, i) => {
-            const x = 90 + i * 190;
-            ctx.fillStyle = '#e9a61a';
-            ctx.beginPath();
-            ctx.roundRect(x, base - (g.a / max) * 150, largura, (g.a / max) * 150, 6);
-            ctx.fill();
-            ctx.fillStyle = '#f3dba0';
-            ctx.beginPath();
-            ctx.roundRect(x + largura + 6, base - (g.b / max) * 150, largura, (g.b / max) * 150, 6);
-            ctx.fill();
-            ctx.fillStyle = '#33302b';
-            ctx.fillText(g.nome, x + largura + 3, base + 26);
-        });
-    </script>
+    <script src="pagina_script.js"></script>
 </body>
 </html>
