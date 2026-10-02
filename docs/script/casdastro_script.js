@@ -102,7 +102,7 @@ function realizarCadastro(){
     localStorage.setItem("telefoneUsuario", telefone);
 
     //Altera automaticamente para a página de login
-    window.location.href = "login.html"
+    window.location.href = "index.html"
 
     //Futuramente será implementado um banco de dados para armazear os dados do usuário
 }

@@ -1,0 +1,406 @@
+/* ===== PALETA (mesma do painel) =====
+   Fundo escuro:  #33302b
+   Marrom:        #6e5e43
+   Amarelo:       #e9a61a
+   Amarelo claro: #f5c02e
+   Fundo da área principal: #f7f5f0
+*/
+
+/* ================================================
+   PARTE IGUAL À PÁGINA DO PAINEL
+   (layout, menu lateral e cabeçalho)
+   ================================================ */
+
+/*Configuração Geral*/
+* {
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+body {
+    margin: 0px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas:
+        'aside header'
+        'aside main';
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 70px 1fr;
+    background-color: #f7f5f0;
+    color: #33302b;
+}
+
+/*Tirando formatação padrão de escritas*/
+h1, h2, h3, p, ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*Tirando formatação padrão da lista*/
+ul {
+    list-style: none;
+}
+
+/*Cabeçalho*/
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+    background-color: white;
+    border-bottom: 1px solid #e8e3d8;
+}
+
+header p {
+    font-size: 14px;
+    color: #8a8478;
+}
+
+/*Caminho da página no cabeçalho*/
+.cabecalho-caminho {
+    display: flex;
+    gap: 10px;
+}
+
+/*Caminho da página atual cor mais escura*/
+.cabecalho-caminho .cabecalho-caminho-atual {
+    color: #33302b;
+    font-weight: 500;
+}
+
+/*Data no cabeçalho*/
+.cabecalho-data {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/*Avatar no cabeçalho*/
+.cabecalho-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #fbe9bd;
+    color: #b57a00;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Menu lateral*/
+aside {
+    grid-area: aside;
+    background-color: #33302b;
+    color: white;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    /*Mantem o aside travado na tela sem rolar*/
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    align-self: start;
+}
+
+/*Logo menu lateral*/
+.menu-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0px 10px;
+}
+
+/*Icone logo menu lateral*/
+.menu-logo-icone {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: #e9a61a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+/*Nome site*/
+.menu-logo-nome {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/*Descrição site*/
+.menu-logo-sub {
+    font-size: 11px;
+    color: #c9bfa8;
+}
+
+/*Indice de páginas*/
+.menu-titulo {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding: 0px 10px;
+    font-size: 12px;
+    color: #9b927f;
+}
+
+/*Lista de páginas*/
+.menu-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/*Paginas*/
+.menu-item {
+    display: block;
+    padding: 12px 15px;
+    border-radius: 25px;
+    color: #e6dfcf;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.menu-item:hover {
+    background-color: #4a463f;
+}
+
+/*Página atual muda estilo*/
+.menu-item-ativo {
+    background-color: #e9a61a;
+    color: white;
+    font-weight: 700;
+}
+
+.menu-item-ativo:hover {
+    background-color: #d3991c;
+}
+
+/*Rodapé que mostra usuário logado*/
+.menu-rodape {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-rodape p {
+    padding-left: 10px;
+}
+
+/*Imagem do usuário*/
+.menu-usuario-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f5c02e;
+    color: #33302b;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Área principal*/
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 30px;
+    align-content: start;
+}
+
+/* Cabeçalho área principal*/
+.principal-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/*Bloco com a saudação (título da página)*/
+.saudacao {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.saudacao-titulo {
+    font-size: 13px;
+    font-weight: 700;
+    color: #e9a61a;
+}
+
+.saudacao-nome {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.saudacao-texto {
+    font-size: 14px;
+    color: #8a8478;
+}
+
+/*Botão do cabeçalho da área principal*/
+.botao-ver-relatorios {
+    height: 40px;
+    padding: 0px 22px;
+    border-radius: 25px;
+    border: none;
+    background-color: #e9a61a;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.botao-ver-relatorios:hover {
+    background-color: #f5c02e;
+}
+
+/* ================================================
+   PARTE EXCLUSIVA DA PÁGINA DE PRODUTOS
+   ================================================ */
+
+/*Cartão branco com filtros e tabela*/
+.produtos {
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+}
+
+/*Linha de filtros*/
+.filtros {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee9dd;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/*Campo de busca ocupa o espaço que sobrar*/
+.campo-busca {
+    flex: 1;
+}
+
+.campo label {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.campo input,
+.campo select {
+    height: 42px;
+    padding: 0px 14px;
+    border: 1px solid #e8e3d8;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: white;
+    color: #33302b;
+    min-width: 200px;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: 2px solid #e9a61a;
+}
+
+/*Área com rolagem da tabela (mesmo estilo do painel)*/
+.container-lista {
+    max-height: 450px;
+    overflow-y: auto;
+}
+
+.container-lista::-webkit-scrollbar {
+    width: 6px;
+}
+
+.container-lista::-webkit-scrollbar-thumb {
+    background-color: #d0d0d0;
+    border-radius: 10px;
+}
+
+/*Tabela de produtos*/
+.produtos-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.produtos-tabela th {
+    text-align: left;
+    padding: 12px;
+    font-size: 12px;
+    color: #8a8478;
+    background-color: #f7f5f0;
+    position: sticky;
+    top: 0;
+}
+
+.produtos-tabela td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #eee9dd;
+}
+
+.produtos-tabela tbody tr {
+    height: 55px;
+}
+
+.produtos-tabela tbody tr:hover {
+    background-color: #fffaf0;
+}
+
+/*Nome do produto*/
+.produtos-nome {
+    font-weight: 700;
+}
+
+/*Preço e quantidade normal*/
+.produtos-destaque {
+    font-weight: 700;
+}
+
+/*Quantidade abaixo do mínimo*/
+.produtos-qtd-baixa {
+    font-weight: 700;
+    color: #e9a61a;
+}
+
+/*Selo de status*/
+.selo {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.selo-ativo {
+    background-color: #fbe9bd;
+    color: #b57a00;
+}
+
+/*Links de ações*/
+.acao-editar {
+    color: #b57a00;
+    font-weight: 700;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.acao-inativar {
+    color: #d93b2b;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.acao-editar:hover,
+.acao-inativar:hover {
+    text-decoration: underline;
+}

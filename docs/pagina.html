@@ -37,12 +37,17 @@
         <p class="menu-titulo">Menu principal</p>
         <nav class="menu-lista">
             <a href="#" class="menu-item menu-item-ativo">Painel do gerente</a>
-            <a href="#" class="menu-item">Produtos</a>
+            <a href="produtos.html" class="menu-item">Produtos</a>
             <a href="#" class="menu-item">Relatórios</a>
         </nav>
         <div class="menu-rodape">
-            <div class="menu-usuario-avatar">A</div>
-            <p>a</p>
+            <div>
+                <div class="menu-usuario-avatar">A</div>
+                <p>a</p>
+            </div>
+            <div class="botao-logout">
+                <a href="index.html"><img src="imagens/logout.png" alt=""></a>
+            </div>
         </div>
     </aside>
 
@@ -111,39 +116,7 @@
                 <span class="selo selo-alerta">4 alertas</span>
             </div>
             <ul id="alertas-lista" class="alertas-lista">
-                <li class="alertas-estoque-item">
-                    <span class="alertas-estoque-icone">&#9635;</span>
-                    <div class="alertas-estoque-info">
-                        <h3>Carregador Portátil 10.000mAh</h3>
-                        <p>Acessórios · Mínimo: 6 un.</p>
-                    </div>
-                    <div class="alertas-estoque-qtd">
-                        <p class="qtd">0 un.</p>
-                        <p>Sem estoque</p>
-                    </div>
-                </li>
-                <li class="alertas-estoque-item">
-                    <span class="alertas-estoque-icone">&#9635;</span>
-                    <div class="alertas-estoque-info">
-                        <h3>Suporte Ajustável para Notebook</h3>
-                        <p>Acessórios · Mínimo: 5 un.</p>
-                    </div>
-                    <div class="alertas-estoque-qtd">
-                        <p class="qtd">1 un.</p>
-                        <p>Em estoque</p>
-                    </div>
-                </li>
-                <li class="alertas-estoque-item">
-                    <span class="alertas-estoque-icone">&#9635;</span>
-                    <div class="alertas-estoque-info">
-                        <h3>Fone de Ouvido Bluetooth</h3>
-                        <p>Eletrônicos · Mínimo: 10 un.</p>
-                    </div>
-                    <div class="alertas-estoque-qtd">
-                        <p class="qtd">4 un.</p>
-                        <p>Em estoque</p>
-                    </div>
-                </li>
+                
             </ul>
         </div>
 
@@ -165,39 +138,26 @@
                 </div>
                 <a href="#" class="sugestoes-link">Ver ponto de pedido</a>
             </div>
-            <table class="sugestoes-tabela">
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Categoria</th>
-                        <th>Estoque atual</th>
-                        <th>Estoque mínimo</th>
-                        <th>Sugestão de compra</th>
-                        <th>Situação</th>
-                    </tr>
-                </thead>
-                <tbody id="listaSugestao">
-                    <tr>
-                        <td class="sugestoes-produto">Carregador Portátil 10.000mAh</td>
-                        <td>Acessórios</td>
-                        <td class="qtd">0 un.</td>
-                        <td>6 un.</td>
-                        <td class="sugestoes-compra">12 un.</td>
-                        <td><span class="selo selo-zerado">Zerado</span></td>
-                    </tr>
-                    <tr>
-                        <td class="sugestoes-produto">Suporte Ajustável para Notebook</td>
-                        <td>Acessórios</td>
-                        <td class="qtd">1 un.</td>
-                        <td>5 un.</td>
-                        <td class="sugestoes-compra">9 un.</td>
-                        <td><span class="selo selo-alerta">Baixo</span></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="container-listaSugestao">
+                <table class="sugestoes-tabela">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Categoria</th>
+                            <th>Estoque atual</th>
+                            <th>Estoque mínimo</th>
+                            <th>Sugestão de compra</th>
+                            <th>Situação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaSugestao">
+                        
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 
-    <script src="pagina_script.js"></script>
+    <script src="script/pagina_script.js"></script>
 </body>
 </html>

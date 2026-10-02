@@ -135,11 +135,10 @@ function adicionarItemSugestao(){
     linhaItem.appendChild(qtdCompraItemSugestao)
 
     let statusItemSugestao = document.createElement('td')
-    statusItemSugestao.textContent = 'Zerado'
     linhaItem.appendChild(statusItemSugestao)
 
     let seloItemSugestao = document.createElement('span')
-    seloItemSugestao.classList.add('selo selo-zerado')
+    seloItemSugestao.classList.add('selo', 'selo-zerado')
     seloItemSugestao.textContent = 'Zerado'
     statusItemSugestao.appendChild(seloItemSugestao)
 

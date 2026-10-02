@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style/produto_style.css">
+</head>
+<body>
+
+    <!-- MENU LATERAL -->
+    <aside>
+        <div class="menu-logo">
+            <div class="menu-logo-icone">▣</div>
+            <div>
+                <h1 class="menu-logo-nome">SGE</h1>
+                <p class="menu-logo-sub">Gestão de estoque</p>
+            </div>
+        </div>
+
+        <p class="menu-titulo">Menu principal</p>
+
+        <ul class="menu-lista">
+            <li><a href="pagina.html" class="menu-item">Painel do gerente</a></li>
+            <li><a href="#" class="menu-item menu-item-ativo">Produtos</a></li>
+            <li><a href="#" class="menu-item">Relatórios</a></li>
+        </ul>
+
+        <div class="menu-rodape">
+            <div class="menu-usuario-avatar">A</div>
+            <p>a</p>
+        </div>
+    </aside>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="cabecalho-caminho">
+            <p>Visão geral</p>
+            <p>&gt;</p>
+            <p class="cabecalho-caminho-atual">Produtos</p>
+        </div>
+
+        <div class="cabecalho-data">
+            <p>01 de outubro de 2026</p>
+            <div class="cabecalho-avatar">A</div>
+        </div>
+    </header>
+
+    <!-- ÁREA PRINCIPAL -->
+    <main>
+
+        <div class="principal-cabecalho">
+            <div class="saudacao">
+                <p class="saudacao-titulo">Catálogo</p>
+                <h2 class="saudacao-nome">Produtos</h2>
+                <p class="saudacao-texto">Consulte e acompanhe os produtos cadastrados no estoque.</p>
+            </div>
+            <button class="botao-ver-relatorios">+ Novo produto</button>
+        </div>
+
+        <section class="produtos">
+
+            <!-- FILTROS -->
+            <div class="filtros">
+                <div class="campo campo-busca">
+                    <label for="busca">Buscar produto</label>
+                    <input type="text" id="busca" placeholder="Nome ou código de barras">
+                </div>
+
+                <div class="campo">
+                    <label for="categoria">Categoria</label>
+                    <select id="categoria">
+                        <option>Todas as categorias</option>
+                        <option>Eletrônicos</option>
+                        <option>Periféricos</option>
+                        <option>Acessórios</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="status">Status</label>
+                    <select id="status">
+                        <option>Todos os status</option>
+                        <option>Ativo</option>
+                        <option>Inativo</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- TABELA -->
+            <div class="container-lista">
+                <table class="produtos-tabela">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Código de barras</th>
+                            <th>Categoria</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Estoque mínimo</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="produtos-nome">Fone de Ouvido Bluetooth</td>
+                            <td>7891234560012</td>
+                            <td>Eletrônicos</td>
+                            <td class="produtos-destaque">R$ 189,90</td>
+                            <td class="produtos-qtd-baixa">4 un.</td>
+                            <td>10 un.</td>
+                            <td><span class="selo selo-ativo">Ativo</span></td>
+                            <td><a href="#" class="acao-editar">Editar</a> <a href="#" class="acao-inativar">Inativar</a></td>
+                        </tr>
+                        <tr>
+                            <td class="produtos-nome">Mouse Sem Fio Ergonômico</td>
+                            <td>7891234560029</td>
+                            <td>Periféricos</td>
+                            <td class="produtos-destaque">R$ 129,90</td>
+                            <td class="produtos-destaque">18 un.</td>
+                            <td>10 un.</td>
+                            <td><span class="selo selo-ativo">Ativo</span></td>
+                            <td><a href="#" class="acao-editar">Editar</a> <a href="#" class="acao-inativar">Inativar</a></td>
+                        </tr>
+                        <tr>
+                            <td class="produtos-nome">Teclado Mecânico RGB</td>
+                            <td>7891234560036</td>
+                            <td>Periféricos</td>
+                            <td class="produtos-destaque">R$ 349,00</td>
+                            <td class="produtos-qtd-baixa">7 un.</td>
+                            <td>8 un.</td>
+                            <td><span class="selo selo-ativo">Ativo</span></td>
+                            <td><a href="#" class="acao-editar">Editar</a> <a href="#" class="acao-inativar">Inativar</a></td>
+                        </tr>
+                        <tr>
+                            <td class="produtos-nome">Cabo USB-C 2 Metros</td>
+                            <td>7891234560043</td>
+                            <td>Acessórios</td>
+                            <td class="produtos-destaque">R$ 49,90</td>
+                            <td class="produtos-destaque">32 un.</td>
+                            <td>15 un.</td>
+                            <td><span class="selo selo-ativo">Ativo</span></td>
+                            <td><a href="#" class="acao-editar">Editar</a> <a href="#" class="acao-inativar">Inativar</a></td>
+                        </tr>
+                        <tr>
+                            <td class="produtos-nome">Carregador Portátil 10.000mAh</td>
+                            <td>7891234560050</td>
+                            <td>Acessórios</td>
+                            <td class="produtos-destaque">R$ 159,90</td>
+                            <td class="produtos-qtd-baixa">0 un.</td>
+                            <td>6 un.</td>
+                            <td><span class="selo selo-ativo">Ativo</span></td>
+                            <td><a href="#" class="acao-editar">Editar</a> <a href="#" class="acao-inativar">Inativar</a></td>
+                        </tr>
+                        <tr>
+                            <td class="produtos-nome">Webcam Full HD 1080p</td>
+                            <td>7891234560067</td>
+                            <td>Eletrônicos</td>
+                            <td class="produtos-destaque">R$ 279,00</td>
+                            <td class="produtos-destaque">12 un.</td>
+                            <td>8 un.</td>
+                            <td><span class="selo selo-ativo">Ativo</span></td>
+                            <td><a href="#" class="acao-editar">Editar</a> <a href="#" class="acao-inativar">Inativar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

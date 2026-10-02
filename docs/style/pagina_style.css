@@ -92,6 +92,11 @@ aside {
     padding: 25px 15px;
     display: flex;
     flex-direction: column;
+    /*Mantem o aside travado na tela sem rolar*/
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    align-self: start;
 }
 
 /*Logo menu lateral*/
@@ -169,13 +174,15 @@ aside {
 
 /*Rodapé que mostra usuário logado*/
 .menu-rodape {
-    margin-top: auto;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
 }
 
 .menu-rodape p{
+    margin-top: 10px;
     padding-left: 10px;
 }
 
@@ -190,6 +197,12 @@ aside {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.botao-logout{
+    display: flex;
+    height: 24px;
+    margin-right: 30px;
 }
 
 /*Área principal*/
@@ -359,7 +372,7 @@ main {
 }
 
 /*Lista de itens em alerta*/
-.alertas-lista{                     /*Criado para criar uma barra de rolagem cajo haja muitos itens*/
+.alertas-lista{                     /*Criado para criar uma barra de rolagem caso haja muitos itens*/
     height: 300px;
     overflow-y: auto;
 }
@@ -502,6 +515,34 @@ main {
 .sugestoes-tabela td {
     padding: 15px 12px;
     border-bottom: 1px solid #eee9dd;
+}
+
+/*Área com rolagem da tabela de sugestão*/
+.container-listaSugestao {
+    max-height: 300px;
+    min-height: 200px;
+    overflow-y: auto;
+}
+
+/*Mesmo estilo de barra de rolagem da lista de alertas*/
+.container-listaSugestao::-webkit-scrollbar {
+    width: 6px;
+}
+
+.container-listaSugestao::-webkit-scrollbar-thumb {
+    background-color: #d0d0d0;
+    border-radius: 10px;
+}
+
+/*Mantém o cabeçalho da tabela visível enquanto rola*/
+.sugestoes-tabela th {
+    position: sticky;
+    top: 0;
+}
+
+/*Altura das linhas*/
+.sugestoes-tabela tbody tr {
+    height: 45px;
 }
 
 /*Nome do produto*/

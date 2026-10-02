@@ -53,7 +53,7 @@ function realizarLogin(){
     console.log("Senha: ", senha)
     console.log("Login validado!")
 
-    window.location.href = "home.html"
+    window.location.href = "pagina.html"
 
     //Futuramente será implementado um banco de dados para fazer a validação do email e senha
 }
