@@ -13,7 +13,6 @@
 </head>
 <body>
 
-    <!-- MENU LATERAL -->
     <aside>
         <div class="menu-logo">
             <div class="menu-logo-icone">▣</div>
@@ -37,7 +36,6 @@
         </div>
     </aside>
 
-    <!-- CABEÇALHO -->
     <header>
         <div class="cabecalho-caminho">
             <p>Visão geral</p>
@@ -51,7 +49,6 @@
         </div>
     </header>
 
-    <!-- ÁREA PRINCIPAL -->
     <main>
 
         <div class="principal-cabecalho">
@@ -60,12 +57,11 @@
                 <h2 class="saudacao-nome">Produtos</h2>
                 <p class="saudacao-texto">Consulte e acompanhe os produtos cadastrados no estoque.</p>
             </div>
-            <button class="botao-ver-relatorios">+ Novo produto</button>
+            <button id="botao-novo-produto" class="botao-ver-relatorios">+ Novo produto</button>
         </div>
 
         <section class="produtos">
 
-            <!-- FILTROS -->
             <div class="filtros">
                 <div class="campo campo-busca">
                     <label for="busca">Buscar produto</label>
@@ -92,7 +88,6 @@
                 </div>
             </div>
 
-            <!-- TABELA -->
             <div class="container-lista">
                 <table class="produtos-tabela">
                     <thead>
@@ -107,7 +102,7 @@
                             <th>Ações</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="listaProdutos">
                         <tr>
                             <td class="produtos-nome">Fone de Ouvido Bluetooth</td>
                             <td>7891234560012</td>
@@ -176,5 +171,6 @@
 
     </main>
 
+    <script src="script/produto_script.js"></script>
 </body>
 </html>
